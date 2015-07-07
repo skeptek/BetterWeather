@@ -91,7 +91,14 @@ public class MultiCityActivity extends Activity {
             TextView debugTextView = (TextView) findViewById(R.id.debugText);
             debugTextView.setText(String.format("length:%d", weatherArrayList.size()));
             TextView weatherIdTextView = (TextView) findViewById(R.id.weatherIdValue);
-            weatherIdTextView.setText(String.format("first id:%d", weatherArrayList.get(0).currentCondition.getWeatherId()));
+            StringBuilder sb = new StringBuilder();
+
+            for (int i=0; i < weatherArrayList.size(); i++) {
+                int cityId = weatherArrayList.get(i).currentCondition.getWeatherId();
+                sb.append(cityId);
+                sb.append("|");
+            }
+            weatherIdTextView.setText(sb.toString());
 
             /*
             if (weather.iconData != null && weather.iconData.length > 0) {
