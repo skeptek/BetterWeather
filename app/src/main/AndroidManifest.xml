@@ -23,6 +23,11 @@
             android:label="@string/title_activity_single_city" >
 
         </activity>
+        <activity
+            android:name=".MultiCityActivity"
+            android:label="@string/title_activity_multi_city" >
+
+        </activity>
     </application>
 
 </manifest>

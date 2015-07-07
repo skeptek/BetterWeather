@@ -12,9 +12,10 @@ tools:context=".MainActivity" >
         android:id="@+id/singleCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Alexandria, USA" />
+        android:text="Alexandria,USA" />
 
     <Button
+        android:id="@+id/singleCityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Single City"
@@ -22,5 +23,15 @@ tools:context=".MainActivity" >
         android:layout_below="@id/singleCity"
         android:layout_alignLeft="@id/singleCity"
         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Multi City"
+        android:layout_below="@id/singleCityButton"
+        android:layout_alignLeft="@id/singleCity"
+        android:onClick="startMultiCityActivity"
+        />
+
 
 </RelativeLayout>

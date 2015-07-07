@@ -45,5 +45,9 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    public void startMultiCityActivity(View view) {
+        Intent intent = new Intent(this, MultiCityActivity.class);
+        startActivity(intent);
+    }
 
 }
