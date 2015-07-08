@@ -1,5 +1,6 @@
 package com.skeptek.betterweather;
 
+import com.skeptek.betterweather.model.Location;
 import com.skeptek.betterweather.model.Weather;
 
 import org.json.JSONArray;
@@ -27,6 +28,12 @@ public class JSONMultiCityWeatherParser {
 
             Weather weather = new Weather();
             weather.currentCondition.setWeatherId(jsonObject.optInt("id", 0));
+            Location location = new Location();
+            location.setCity(jsonObject.optString("name", "City Name Not Found"));
+            weather.location = location;
+            JSONObject weatherMainJsonObject = jsonObject.getJSONObject("main");
+            weather.temperature.setTemp((float)weatherMainJsonObject.optDouble("temp", 12345));
+
             weatherArrayList.add(weather); //add 1 object for testing
 
             //int id = Integer.parseInt(jsonObject.optString("id").toString());

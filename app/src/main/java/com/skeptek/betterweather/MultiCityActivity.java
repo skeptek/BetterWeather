@@ -30,7 +30,7 @@ public class MultiCityActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multi_city);
-        String city = "lat=55.5&lon=37.5&cnt=10";
+        String city = "lat=38.7900526&lon=-77.0992056&cnt=10";
         JSONWeatherTask task = new JSONWeatherTask();
         task.execute(new String[]{city});
         /*
@@ -95,7 +95,11 @@ public class MultiCityActivity extends Activity {
 
             for (int i=0; i < weatherArrayList.size(); i++) {
                 int cityId = weatherArrayList.get(i).currentCondition.getWeatherId();
-                sb.append(cityId);
+                String cityName = weatherArrayList.get(i).location.getCity();
+                float cityTemp = weatherArrayList.get(i).temperature.getTemp();
+                sb.append("id:" + cityId + ",");
+                sb.append("city:" + cityName + ",");
+                sb.append("city temp:" + cityTemp + ",");
                 sb.append("|");
             }
             weatherIdTextView.setText(sb.toString());
